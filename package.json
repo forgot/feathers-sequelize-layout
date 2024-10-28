@@ -56,7 +56,10 @@
     "@feathersjs/socketio": "^5.0.30",
     "@feathersjs/transport-commons": "^5.0.30",
     "@feathersjs/typebox": "^5.0.30",
-    "pg": "^8.12.0",
+    "feathers-sequelize": "8.0.0-pre.1",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.5",
     "winston": "^3.15.0"
   },
   "devDependencies": {
