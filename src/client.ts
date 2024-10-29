@@ -4,6 +4,15 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { noteClient } from './services/notes/notes.shared'
+export type { Note, NoteData, NoteQuery, NotePatch } from './services/notes/notes.shared'
+
+import { addressClient } from './services/addresses/addresses.shared'
+export type { Address, AddressData, AddressQuery, AddressPatch } from './services/addresses/addresses.shared'
+
+import { projectClient } from './services/projects/projects.shared'
+export type { Project, ProjectData, ProjectQuery, ProjectPatch } from './services/projects/projects.shared'
+
 import { userClient } from './services/users/users.shared'
 export type { User, UserData, UserQuery, UserPatch } from './services/users/users.shared'
 
@@ -34,5 +43,8 @@ export const createClient = <Configuration = any,>(
   client.set('connection', connection)
 
   client.configure(userClient)
+  client.configure(projectClient)
+  client.configure(addressClient)
+  client.configure(noteClient)
   return client
 }
